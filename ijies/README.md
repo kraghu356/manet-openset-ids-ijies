@@ -2,8 +2,7 @@
 
 This repository is the copy of
 [`manet-openset-ids`](https://github.com/kraghu356/manet-openset-ids) that accompanies the
-condensed (10-page) manuscript *Open-Set Detection of Unseen Routing Attacks in Mobile Ad Hoc
-Networks* submitted to the International Journal of Intelligent Engineering and Systems (IJIES).
+condensed (10-page) manuscript *Open-Set Evaluation of Learned Routing-Attack Detectors in Mobile Ad Hoc Networks* submitted to the International Journal of Intelligent Engineering and Systems (IJIES).
 The code, datasets and result files are identical to the original repository; this copy adds the
 IJIES figures, the map below from the paper's tables to the scripts that produce them, and
 `SUPPLEMENT.md`, which holds every table of the full analysis, including those the
