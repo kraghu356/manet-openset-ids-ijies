@@ -1,5 +1,7 @@
 # Open-Set Detection of Unseen Routing Attacks in Mobile Ad Hoc Networks
 
+> **IJIES version.** This is the copy of `manet-openset-ids` that accompanies the IJIES submission. Code and data are unchanged; see [`ijies/README.md`](ijies/README.md) for the map from the paper's tables to the scripts and [`ijies/SUPPLEMENT.md`](ijies/SUPPLEMENT.md) for every table of the full analysis.
+
 Simulator, attack module, dataset and analysis code for the manuscript
 "Open-Set Detection of Unseen Routing Attacks in Mobile Ad Hoc Networks"
 (earlier working title: "When Unseen Attacks Look Normal: Open-Set Evaluation,
