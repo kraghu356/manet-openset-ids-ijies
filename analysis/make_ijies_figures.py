@@ -1,4 +1,4 @@
-"""Figures of the IJIES manuscript: 10 pt Times-metric text, 600 dpi, one IJIES column wide.
+"""Figures of the IJIES manuscript, 600 dpi, one IJIES column wide.
 
     python3 analysis/make_ijies_figures.py   # writes figures/ijies/fig1_protocol and fig2_robustness
 """
@@ -45,8 +45,8 @@ d = pd.read_csv(os.path.join(R, "nu_robustness.csv")).set_index("condition")
 missing = [c for c in d.index if c not in LBL]; assert not missing, missing
 d = d.loc[[c for c in LBL if c in d.index]]
 LBL = {k: v.replace(" per cent", "%").replace("-", "–") for k, v in LBL.items()}
-y = np.arange(len(d))[::-1]; h = 0.4
-fig, (a1, a2) = plt.subplots(2, 1, figsize=(8.2 * CM, 12.6 * CM), gridspec_kw=dict(hspace=0.62))
+y = np.arange(len(d))[::-1]; h = 0.36
+fig, (a1, a2) = plt.subplots(2, 1, figsize=(8.2 * CM, 13.6 * CM), gridspec_kw=dict(hspace=0.62))
 a1.barh(y + h / 2, 100 * d.tpr_node, h, color="#2a6fbf", label="Endpoint flagged in any window")
 a1.barh(y - h / 2, 100 * d.tpr_win, h, color="#7fc4a4", label="Endpoint windows with \u03bd > 0")
 a1.set_xlim(0, 105); a1.set_xlabel("(a) Wormhole endpoints (%)")
@@ -56,5 +56,6 @@ a2.set_xlim(0, 52); a2.set_xlabel("(b) Honest nodes flagged (%)")
 for ax in (a1, a2):
     ax.spines[["top", "right"]].set_visible(False); ax.xaxis.grid(True, color="#dddddd", lw=0.5); ax.set_axisbelow(True)
     ax.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.42, 1.0), ncol=1, handlelength=1.2, borderaxespad=0.2)
-    ax.set_yticks(y); ax.set_yticklabels([LBL[c] for c in d.index]); ax.set_ylim(-0.7, len(d) - 0.3)
+    ax.set_yticks(y); ax.set_yticklabels([LBL[c] for c in d.index], fontsize=8); ax.set_ylim(-0.7, len(d) - 0.3)
+    ax.tick_params(axis="y", length=2, pad=2)
 save(fig, "fig2_robustness")
