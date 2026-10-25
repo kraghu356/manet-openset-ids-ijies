@@ -46,7 +46,7 @@ missing = [c for c in d.index if c not in LBL]; assert not missing, missing
 d = d.loc[[c for c in LBL if c in d.index]]
 LBL = {k: v.replace(" per cent", "%").replace("-", "–") for k, v in LBL.items()}
 y = np.arange(len(d))[::-1]; h = 0.36
-fig, (a1, a2) = plt.subplots(2, 1, figsize=(8.2 * CM, 13.6 * CM), gridspec_kw=dict(hspace=0.62))
+fig, (a1, a2) = plt.subplots(2, 1, figsize=(8.2 * CM, 13.0 * CM), gridspec_kw=dict(hspace=0.62))
 a1.barh(y + h / 2, 100 * d.tpr_node, h, color="#2a6fbf", label="Endpoint flagged in any window")
 a1.barh(y - h / 2, 100 * d.tpr_win, h, color="#7fc4a4", label="Endpoint windows with \u03bd > 0")
 a1.set_xlim(0, 105); a1.set_xlabel("(a) Wormhole endpoints (%)")
